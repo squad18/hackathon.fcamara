@@ -22,7 +22,7 @@ public class Responsavel extends PanacheEntity {
 	private String nome;
 
 	@Column(name="endereco")
-	private Float endereco;
+	private String endereco;
 
 	
 	//CONSTRUCTORS
@@ -54,10 +54,10 @@ public class Responsavel extends PanacheEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Float getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(Float endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
