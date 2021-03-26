@@ -1,54 +1,77 @@
+![alt text](https://i.postimg.cc/LXjTgrMH/Squad18-1.jpg)
+
 # doacao-api project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## Running the application in dev mode
 
-You can run your application in dev mode that enables live coding using:
+
+## Passo-a-passo de como instalar o projeto e executá-lo
+
+Esse projeto é feito com Java, sendo utilizado o framework Quarkus, e MySQL para o banco de dados.
+Para o Quarkus, é necessário o JDK 11 e o Apache Maven 3.6.3 (links abaixo):
+
+https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html
+
+https://maven.apache.org/download.cgi
+
+Como IDE, estamos usando o Eclipse:
+
+https://www.eclipse.org/downloads/
+
+
+Instalado todos esses componentes, segue abaixo como baixar o programa e executá-lo:
+
+
+
+*****
+1º Clone o projeto do github a partit da url: https://github.com/squad18/hackathon.fcamara.git 
+
+```shell script
+git clone https://github.com/squad18/hackathon.fcamara.git
+```
+
+Para acessar a branch master, execute o seguinte código no terminal:
+
+```shell script
+git checkout master
+```
+
+
+
+*****
+2º - Estando no diretório do projeto, execute o seguinde comanto no terminal:
+
 ```shell script
 ./mvnw compile quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
-## Packaging and running the application
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+*****
+3º - Acesse o link abaixo no seu navegador para verificar se esta funcionando a aplicação:
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+http://localhost:8080/q/swagger-ui/
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
 
-## Creating a native executable
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+*****
+4º - Se você estiver usando o Eclipse, basta importá-lo da seguinte maneira:
 
-You can then execute your native executable with: `./target/doacao-api-1.0.0-SNAPSHOT-runner`
+- Com o Eclipse aberto, clique em: File-> Import;
+- Abra   a aba do Import e depois seleciona "Existing Maven Project";
+- Navegue até o diretório onde está o projeto e clique em abrir;
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
 
-## Provided examples
 
-### RESTEasy JAX-RS example
+Caso ocorra algum problema na aplicação ou em sua execução, contate-nos por discord ou por e-mail:
 
-REST is easy peasy with this Hello World RESTEasy resource.
+Lucas - @Lucas Cabral / lucas.kabral2112@gmail.com
 
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+Monica - @Monica Ribeiro / monicaspribeiro@gmail.com
+
+Riane - @Riane / Rianemlo@gmail.com
+
