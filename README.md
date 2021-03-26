@@ -14,6 +14,7 @@ Esse projeto é feito com Java, sendo utilizado o framework Quarkus, e MySQL par
 Para o Quarkus, é necessário o JDK 11 e o Apache Maven 3.6.3 (links abaixo):
 
 https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html
+
 https://maven.apache.org/download.cgi
 
 Como IDE, estamos usando o Eclipse:
@@ -22,6 +23,7 @@ https://www.eclipse.org/downloads/
 
 
 Instalado todos esses componentes, segue abaixo como baixar o programa e executá-lo:
+
 
 
 *****
@@ -38,6 +40,7 @@ git checkout master
 ```
 
 
+
 *****
 2º - Estando no diretório do projeto, execute o seguinde comanto no terminal:
 
@@ -46,10 +49,12 @@ git checkout master
 ```
 
 
+
 *****
 3º - Acesse o link abaixo no seu navegador para verificar se esta funcionando a aplicação:
 
 http://localhost:8080/q/swagger-ui/
+
 
 
 
@@ -61,8 +66,12 @@ http://localhost:8080/q/swagger-ui/
 - Navegue até o diretório onde está o projeto e clique em abrir;
 
 
+
 Caso ocorra algum problema na aplicação ou em sua execução, contate-nos por discord ou por e-mail:
 
 Lucas - @Lucas Cabral / lucas.kabral2112@gmail.com
+
 Monica - @Monica Ribeiro / monicaspribeiro@gmail.com
+
 Riane - @Riane / Rianemlo@gmail.com
+
