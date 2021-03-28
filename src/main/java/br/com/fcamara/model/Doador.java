@@ -33,10 +33,7 @@ public class Doador extends PanacheEntity {
 
 	@OneToMany(mappedBy="doador", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Doacao> doacoes;
-	
-	//@OneToMany(mappedBy="carro", cascade=CascadeType.ALL, orphanRemoval=true)
-	//private List<Aluguel> aluguel;
-	  
+		  
 	
 	//CONSTRUCTORS
 	public Doador() {

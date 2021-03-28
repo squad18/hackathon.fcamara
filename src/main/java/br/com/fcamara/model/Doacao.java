@@ -18,9 +18,9 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name="doacao")
 public class Doacao extends PanacheEntity {
 
-	@Column(name="data_status", nullable=false, updatable=false)
+	@Column(name="dataStatus", nullable=false, updatable=false)
 	@CreationTimestamp
-	private LocalDateTime data_status;
+	private LocalDateTime dataStatus;
 
 	@Column(name="status")
 	private String status;
@@ -28,22 +28,14 @@ public class Doacao extends PanacheEntity {
 	@Column(name="agendamento")
 	private String agendamento;
 
-	@ManyToOne(optional=false) //optional=false, ou seja é obrigatório! Não há filho sem responsável.
+	@ManyToOne(optional=false)
 	@JoinColumn(name="responsavel_id", updatable=false)
 	private Responsavel responsavel;
 	
-	@ManyToOne(optional=false) //optional=false, ou seja é obrigatório! Não há filho sem responsável.
+	@ManyToOne(optional=false)
 	@JoinColumn(name="doador_id", updatable=false)
 	private Doador doador;
-	
-	/* @ManyToOne(optional=false)
-	@JoinColumn(name="carro_id", updatable=false)
-	private Carro carro;
-	
-	@ManyToOne(optional=false)
-	@JoinColumn(name="cliente_id", updatable=false)
-	private Cliente cliente;
-	*/
+		
 	
 	//CONSTRUCTORS
 	public Doacao() {
@@ -62,11 +54,11 @@ public class Doacao extends PanacheEntity {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public LocalDateTime getData() {
-		return data_status;
+	public LocalDateTime getDataStatus() {
+		return dataStatus;
 	}
-	public void setData(LocalDateTime data_status) {
-		this.data_status = data_status;
+	public void setDataStatus(LocalDateTime dataStatus) {
+		this.dataStatus = dataStatus;
 	}
 	public String getStatus() {
 		return status;
@@ -86,11 +78,11 @@ public class Doacao extends PanacheEntity {
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
 	}
-	public Doador getDoadores() {
+	public Doador getDoador() {
 		return doador;
 	}
-	public void setDoadores(Doador doadores) {
-		this.doador = doadores;
+	public void setDoador(Doador doador) {
+		this.doador = doador;
 	}
 	
 }

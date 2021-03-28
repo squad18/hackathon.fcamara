@@ -14,9 +14,6 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name="filho")
 public class Filho extends PanacheEntity {
 
-//	@Id
-//	private Long id;
-	
 	@Column(name="nome", nullable=false)
 	private String nome;
 	

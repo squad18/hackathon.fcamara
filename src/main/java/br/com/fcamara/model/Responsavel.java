@@ -15,9 +15,6 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 @Table(name="responsavel")
 public class Responsavel extends PanacheEntity {
-
-//	@Id
-//	private Long id;
 	
 	@Column(name="cpf", nullable=false)
 	private Long cpf;
@@ -36,6 +33,7 @@ public class Responsavel extends PanacheEntity {
 	
 	@OneToMany(mappedBy="responsavel", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Doacao> doacoes;
+	
 	
 	//CONSTRUCTORS
 	public Responsavel() {
