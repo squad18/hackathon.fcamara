@@ -16,21 +16,25 @@ import br.com.fcamara.model.parser.DoacaoParser;
 
 
 @RequestScoped
-public class DoacaoService {
+public class DoacaoService { //SERVICE É ONDE FICAM AS VALIDAÇÕES!!!
 
 	@Inject
-	DoacaoDao dao;
+	DoacaoDao dao; // a dao é tipo um repository
 	
-	@Inject
-	ResponsavelService responsavelService;
+//	@Inject
+//	FilhoService filhoService;
 	
 	public List<DoacaoDto> listar() {
-        return dao.listar().stream().map(DoacaoParser.get()::dto).collect(Collectors.toList());
+        return dao
+        		.listar()
+        		.stream()
+        		.map(DoacaoParser.get()::dto)
+        		.collect(Collectors.toList());
     }
 	
-	//Lista todas as doações que um responsavel recebeu pelo seu id 
-	public List<DoacaoDto> buscarDoacaoPorIdResponsavel(Long id) {
-		List<Doacao> doacao = dao.buscarDoacaoPorIdResponsavel(id);
+	//Lista todas as doações que um aluno recebeu pelo seu id 
+	public List<DoacaoDto> buscarDoacaoPorIdFilho(Long id) {
+		List<Doacao> doacao = dao.buscarDoacaoPorIdFilho(id);
 		
 		return doacao
 				.stream()
@@ -39,16 +43,16 @@ public class DoacaoService {
 
     } 
 		
-	public void validar(DoacaoDto doacaoDto) {	
-		if ( responsavelService.buscarResponsavel(doacaoDto.getIdResponsavel()) == null ) {
-			throw new NotAllowedException("ID de responsável fora do sistema!");
-		} 
-		
-	}
+		public void validar(DoacaoDto doacaoDto) {
+//		if ( filhoService.buscarResponsavel(doacaoDto.getIdFilho()) == null ) {
+//			throw new NotAllowedException("ID do aluno fora do sistema!");
+//		} 
+//		
+		}
 	 	
 	@Transactional(rollbackOn = Exception.class) 
 	public void cadastrar(DoacaoDto doacaoDto) {
-		doacaoDto.setStatus("SOLICITADO"); //sempre que insere um doacao, o status será SOLICITADO
+		doacaoDto.setStatus("SOLICITADO"); //sempre que se cadastra uma doacao, o status será SOLICITADO
 		validar(doacaoDto);
 		
 		Doacao doacao = DoacaoParser.get().entidade(doacaoDto);

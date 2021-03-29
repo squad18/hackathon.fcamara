@@ -17,6 +17,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 import br.com.fcamara.dto.DoacaoDto;
+import br.com.fcamara.model.Doacao;
 import br.com.fcamara.service.DoacaoService;
 
 
@@ -25,25 +26,25 @@ import br.com.fcamara.service.DoacaoService;
 @Produces(MediaType.APPLICATION_JSON)
 public class DoacaoRest {
 
-	@Inject
+	@Inject 
 	DoacaoService service;
 	
-//	@GET
-//    @Operation(summary = "Listar doações.",
-//            description = "Listar todas as  doações.")
-//    @APIResponse(responseCode = "200",
-//            description = "doacao",
-//            content = {
-//                    @Content(mediaType =  "application/json",
-//                            schema = @Schema(implementation = DoacaoDto.class))
-//            }
-//    )
-//    public Response listar() {
-//        return Response
-//                .status(Response.Status.OK)
-//                .entity(service.listar())
-//                .build();
-//    }
+	@GET
+    @Operation(summary = "Listar doações.",
+            description = "Listar todas as doações.")
+    @APIResponse(responseCode = "200",
+            description = "doacao",
+            content = {
+                    @Content(mediaType =  "application/json",
+                            schema = @Schema(implementation = DoacaoDto.class))
+            }
+    )
+    public Response listar() {
+        return Response
+                .status(Response.Status.OK)
+                .entity(service.listar())
+                .build();
+    }
 //	
 //	
 //	
@@ -68,7 +69,7 @@ public class DoacaoRest {
 	@POST
 	@Path("")
 	@Operation(summary = "Cadastrar uma doação.",
-	description = "Cadastrar uma doação: ID do doador, ID do reponsável e agendamento (hora e data).")
+	description = "Cadastrar uma doação: ID do doador, ID do aluno e agendamento (hora e data).")
 	@APIResponse(responseCode = "201",
 	description = "doacao",
 	content = {

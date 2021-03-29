@@ -1,10 +1,14 @@
 package br.com.fcamara.model;
 
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -12,7 +16,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name="filho")
-public class Filho extends PanacheEntity {
+public class Filho extends PanacheEntity { //não tem @ID porque o PanacheEntity toma conta disso
 
 	@Column(name="nome", nullable=false)
 	private String nome;
@@ -32,6 +36,10 @@ public class Filho extends PanacheEntity {
 	@ManyToOne(optional=false) //optional=false, ou seja é obrigatório! Não há filho sem responsável.
 	@JoinColumn(name="responsavel_id", updatable=false)
 	private Responsavel responsavel;
+	
+	@OneToMany(mappedBy="filho", cascade=CascadeType.ALL, orphanRemoval=true)
+	private List<Doacao> doacoes;
+	
 	
 	//CONSTRUCTORS
 	public Filho() {
@@ -85,6 +93,12 @@ public class Filho extends PanacheEntity {
 	}
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
+	}
+	public List<Doacao> getDoacoes() {
+		return doacoes;
+	}
+	public void setDoacoes(List<Doacao> doacoes) {
+		this.doacoes = doacoes;
 	}
 	
 }

@@ -3,7 +3,7 @@ package br.com.fcamara.model.parser;
 import br.com.fcamara.dto.DoacaoDto;
 import br.com.fcamara.model.Doacao;
 import br.com.fcamara.model.Doador;
-import br.com.fcamara.model.Responsavel;
+import br.com.fcamara.model.Filho;
 
 public class DoacaoParser {
 	
@@ -17,7 +17,7 @@ public class DoacaoParser {
     	dto.setAgendamento(entidade.getAgendamento());
     	dto.setDataStatus(entidade.getDataStatus());
     	dto.setIdDoador(entidade.getDoador().getId());
-    	dto.setIdResponsavel(entidade.getResponsavel().getId());
+    	dto.setIdFilho(entidade.getFilho().getId());
     	dto.setStatus(entidade.getStatus());
     	
         return dto;
@@ -29,7 +29,7 @@ public class DoacaoParser {
     	entidade.setAgendamento(dto.getAgendamento());
     	entidade.setDataStatus(dto.getDataStatus());
     	entidade.setDoador(new Doador(dto.getIdDoador()));
-    	entidade.setResponsavel(new Responsavel(dto.getIdResponsavel()));
+    	entidade.setFilho(new Filho(dto.getIdFilho()));
     	entidade.setStatus(dto.getStatus());
     	
         return entidade;

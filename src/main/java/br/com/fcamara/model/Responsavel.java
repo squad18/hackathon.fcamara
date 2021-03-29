@@ -27,13 +27,10 @@ public class Responsavel extends PanacheEntity {
 
 	@Column(name="email", nullable=false)
 	private String email;
-
+	
 	@OneToMany(mappedBy="responsavel", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Filho> filhos;
-	
-	@OneToMany(mappedBy="responsavel", cascade=CascadeType.ALL, orphanRemoval=true)
-	private List<Doacao> doacoes;
-	
+		
 	
 	//CONSTRUCTORS
 	public Responsavel() {

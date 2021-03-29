@@ -13,7 +13,7 @@ import java.util.List;
 public class ResponsavelDao {
 
     public List<Responsavel> listar() {
-        return Responsavel.listAll();
+        return Responsavel.listAll(); //retorna uma lista vazia [] se não houver responsáveis
     }
     
     public Responsavel buscarResponsavel(Long id) {
