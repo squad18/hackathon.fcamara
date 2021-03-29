@@ -8,7 +8,7 @@ import javax.json.bind.annotation.JsonbDateFormat;
 import javax.validation.constraints.NotNull;
 
 
-public class DoacaoDto implements Serializable {
+public class DoacaoDto implements Serializable {//serializable é pq vai ser mandado pro front
 	
 	private Long id;
 	
@@ -20,8 +20,8 @@ public class DoacaoDto implements Serializable {
 	
 	private String agendamento;
 	
-	@NotNull(message="Id do responsável é obrigatótrio!")
-	private Long idResponsavel;
+	@NotNull(message="Id do filho é obrigatótrio!")
+	private Long idFilho;
 	
 	@NotNull(message="Id do doador é obrigatótrio!")
 	private Long idDoador;
@@ -52,11 +52,11 @@ public class DoacaoDto implements Serializable {
 	public void setAgendamento(String agendamento) {
 		this.agendamento = agendamento;
 	}
-	public Long getIdResponsavel() {
-		return idResponsavel;
+	public Long getIdFilho() {
+		return idFilho;
 	}
-	public void setIdResponsavel(Long idResponsavel) {
-		this.idResponsavel = idResponsavel;
+	public void setIdFilho(Long idFilho) {
+		this.idFilho = idFilho;
 	}
 	public Long getIdDoador() {
 		return idDoador;

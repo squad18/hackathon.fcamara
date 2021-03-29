@@ -29,8 +29,8 @@ public class Doacao extends PanacheEntity {
 	private String agendamento;
 
 	@ManyToOne(optional=false)
-	@JoinColumn(name="responsavel_id", updatable=false)
-	private Responsavel responsavel;
+	@JoinColumn(name="filho_id", updatable=false)
+	private Filho filho;
 	
 	@ManyToOne(optional=false)
 	@JoinColumn(name="doador_id", updatable=false)
@@ -72,11 +72,11 @@ public class Doacao extends PanacheEntity {
 	public void setAgendamento(String agendamento) {
 		this.agendamento = agendamento;
 	}
-	public Responsavel getResponsavel() {
-		return responsavel;
+	public Filho getFilho() {
+		return filho;
 	}
-	public void setResponsavel(Responsavel responsavel) {
-		this.responsavel = responsavel;
+	public void setFilho(Filho filho) {
+		this.filho = filho;
 	}
 	public Doador getDoador() {
 		return doador;

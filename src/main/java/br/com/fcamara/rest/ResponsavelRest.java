@@ -5,7 +5,8 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
-import br.com.fcamara.model.Responsavel;
+import br.com.fcamara.dto.ResponsavelDto;
+import br.com.fcamara.exception.ApiException;
 import br.com.fcamara.service.ResponsavelService;
 
 import javax.inject.Inject;
@@ -35,7 +36,7 @@ public class ResponsavelRest {
 	description = "responsável",
 	content = {
 			@Content(mediaType =  "application/json",
-					schema = @Schema(implementation = Responsavel.class))
+					schema = @Schema(implementation = ResponsavelDto.class))
 		}
 	)
 	public Response listar() {
@@ -51,7 +52,7 @@ public class ResponsavelRest {
 	description = "responsável",
 	content = {
 			@Content(mediaType =  "application/json",
-					schema = @Schema(implementation = Responsavel.class))
+					schema = @Schema(implementation = ResponsavelDto.class))
 		}
 	)
 	public Response buscarResponsavel(@PathParam("id") Long id) {
@@ -62,19 +63,22 @@ public class ResponsavelRest {
 	@POST
 	@Path("")
 	@Operation(summary = "Cadastrar responsável.",
-	description = "Cadastrar responsável: cpf, endereço e nome.")
+	description = "Cadastrar responsável: cpf, email, endereço e nome.")
 	@APIResponse(responseCode = "201",
 	description = "responsável",
 	content = {
 			@Content(mediaType =  "application/json",
-					schema = @Schema(implementation = Responsavel.class))
+					schema = @Schema(implementation = ResponsavelDto.class))
 			}
 	)
-	public Response cadastrar(Responsavel responsavel) {
-		service.cadastrar(responsavel);
-		return Response.status(Status.CREATED).build();
+	public Response cadastrar(ResponsavelDto responsavelDto) {
+		try {
+			service.cadastrar(responsavelDto);
+			return Response.status(Status.CREATED).build();
+		} catch (ApiException e) {
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+		}
 		
 	}
-
-
+	
 }

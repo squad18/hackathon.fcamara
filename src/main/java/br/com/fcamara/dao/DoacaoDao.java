@@ -8,28 +8,29 @@ import javax.transaction.Transactional;
 
 import br.com.fcamara.model.Doacao;
 import br.com.fcamara.model.Doador;
-import br.com.fcamara.model.Responsavel;
+import br.com.fcamara.model.Filho;
 import io.quarkus.panache.common.Sort;
 
 
 @RequestScoped
-public class DoacaoDao {
+public class DoacaoDao { //é tipo o repository do spring
 	
 	public List<Doacao> listar() {
         return Doacao.listAll(Sort.by("data"));
     }
 		
-	public List<Doacao> buscarDoacaoPorIdResponsavel(Long id) { 
-		return Doacao.list("responsavel", Sort.by("data").descending(), new Responsavel(id));
-    } 
-	
-	public List<Doacao> buscarDoacaoPorCpf(Long id) {
-		return Doacao.list("doador", Sort.by("data").descending(), new Doador(id));
+	public List<Doacao> buscarDoacaoPorIdFilho(Long id) { 
+		return Doacao.list("filho", Sort.by("data").descending(), new Filho(id));
     }
 	
+	public List<Doacao> buscarDoacaoPorIdDoador(Long id) { 
+		return Doacao.list("doador", Sort.by("data").descending(), new Doador(id));
+    }
+		
 	@Transactional
 	public void cadastrar(Doacao doacao) {
-		doacao.persistAndFlush();	
+		doacao.persistAndFlush(); //persiste e cria uma id
+		//doacao.persit(); só persiste e não cria a id
 	}
 	
 }
