@@ -11,12 +11,12 @@ public class DoadorParser{
 
     public DoadorDto dto(Doador entidade){
         DoadorDto dto = new DoadorDto();
-         
-        dto.setCpf(entidade.getCpf());
+        
         dto.setTipo(entidade.getTipo());
         dto.setNome(entidade.getNome());
         dto.setEndereco(entidade.getEndereco());
         dto.setEmail(entidade.getEndereco());
+        dto.setTelefone(entidade.getTelefone());
 
         return dto;
     }
@@ -26,9 +26,9 @@ public class DoadorParser{
          
         entidade.setTipo(dto.getTipo());
         entidade.setNome(dto.getNome());
-        entidade.setCpf(dto.getCpf());
         entidade.setEndereco(dto.getEndereco());
         entidade.setEmail(dto.getEndereco());
+        entidade.setTelefone(dto.getTelefone());
 
         return entidade;
     }

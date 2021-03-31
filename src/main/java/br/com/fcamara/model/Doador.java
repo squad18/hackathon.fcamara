@@ -22,14 +22,14 @@ public class Doador extends PanacheEntity {
 	@Column(name="nome")
 	private String nome;
 
-	@Column(name="cpf")
-	private Long cpf;
-
 	@Column(name="endereco")
 	private String endereco;
 
 	@Column(name="email")
 	private String email;
+
+	@Column(name="telefone")
+	private String telefone;
 
 	@OneToMany(mappedBy="doador", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Doacao> doacoes;
@@ -64,12 +64,6 @@ public class Doador extends PanacheEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getCpf() {
-		return cpf;
-	}
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
-	}
 	public String getEndereco() {
 		return endereco;
 	}
@@ -87,6 +81,14 @@ public class Doador extends PanacheEntity {
 	}
 	public void setDoacoes(List<Doacao> doacoes) {
 		this.doacoes = doacoes;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	
 }

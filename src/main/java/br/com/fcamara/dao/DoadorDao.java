@@ -6,8 +6,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.transaction.Transactional;
 
 import br.com.fcamara.model.Doador;
-import br.com.fcamara.model.Responsavel;
-import io.quarkus.panache.common.Sort;
 
 @RequestScoped
 public class DoadorDao {

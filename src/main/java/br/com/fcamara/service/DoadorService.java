@@ -32,9 +32,9 @@ public class DoadorService {
         }
         if(doadordto.getTipo().equals("Indentificado") && 
                 (doadordto.getNome().length() == 0) ||
-                String.valueOf(doadordto.getCpf()).length() == 0 ||
                 doadordto.getEmail().length() == 0 ||
-                doadordto.getEndereco().length() == 0
+                doadordto.getEndereco().length() == 0 ||
+                doadordto.getTelefone().length() == 0
             ){
             throw new ApiException("Insira todos os dados!");
         }

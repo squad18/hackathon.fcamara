@@ -16,7 +16,7 @@ public class DoadorDto implements Serializable{
 
     private String nome;
 
-    private Long cpf;
+    private String telefone;
 
     private String endereco;
 
@@ -48,14 +48,6 @@ public class DoadorDto implements Serializable{
         this.nome = nome;
     }
 
-    public Long getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(Long cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -70,6 +62,14 @@ public class DoadorDto implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTelefone(){
+        return telefone;
+    }
+
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
     }
     
 }
