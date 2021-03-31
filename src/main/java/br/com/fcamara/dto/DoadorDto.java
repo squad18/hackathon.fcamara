@@ -22,8 +22,6 @@ public class DoadorDto implements Serializable{
 
     private String email;
 
-    private Long idDoacoes; 
-
     
     // GETTERS AND SETTERS
     public Long getId() {
@@ -72,14 +70,6 @@ public class DoadorDto implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getIdDoacoes() {
-        return idDoacoes;
-    }
-
-    public void setIdDoacoes(Long idDoacoes) {
-        this.idDoacoes = idDoacoes;
     }
     
 }

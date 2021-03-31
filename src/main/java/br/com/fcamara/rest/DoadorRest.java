@@ -15,7 +15,6 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
-import antlr.collections.List;
 import br.com.fcamara.dto.DoadorDto;
 import br.com.fcamara.service.DoadorService;
 import javax.ws.rs.core.Response.Status;
@@ -29,8 +28,8 @@ public class DoadorRest {
     
     @GET
     @Operation(
-        summary = "Cadastrar um doador",
-        description = "Cadastrar um doador"
+        summary = "Listar um doador",
+        description = "Listar um doador"
     )@APIResponse(
         responseCode = "200",
         description = "Listagem de doadores",
@@ -45,7 +44,7 @@ public class DoadorRest {
     @POST
     @Operation(
         summary = "Cadastrar um doador",
-        description = "Cadastrar um doador"
+        description = "Cadastrar um doador ( Precisa de dados do cpf, email, endereço, nome e tipo)."
     )@APIResponse(
         responseCode = "201",
         description = "Cadastrar um doador",
