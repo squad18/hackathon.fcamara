@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -16,6 +17,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 import br.com.fcamara.dto.DoadorDto;
+import br.com.fcamara.exception.ApiException;
 import br.com.fcamara.service.DoadorService;
 import javax.ws.rs.core.Response.Status;
 
@@ -40,6 +42,21 @@ public class DoadorRest {
     public Response listar(){
         return Response.status(Status.OK).entity(service.listar()).build();
     }   
+
+    @GET
+	@Path("{id}")
+	@Operation(summary = "Buscar doador.",
+	description = "Buscar doador pelo id.")
+	@APIResponse(responseCode = "200",
+	description = "doador",
+	content = {
+			@Content(mediaType =  "application/json",
+					schema = @Schema(implementation = DoadorDto.class))
+		}
+	)
+	public Response buscarDoador(@PathParam("id") Long id) {
+		return Response.status(Status.OK).entity(service.buscarDoador(id)).build();
+	}
     
     @POST
     @Operation(
@@ -52,7 +69,7 @@ public class DoadorRest {
             @Content(mediaType = "application/json", schema = @Schema(implementation = DoadorDto.class))
         }
     )
-    public Response cadastrar(DoadorDto dto){
+    public Response cadastrar(DoadorDto dto) throws ApiException{
         service.cadastrar(dto);
         return Response.status(Response.Status.OK).build();
     }

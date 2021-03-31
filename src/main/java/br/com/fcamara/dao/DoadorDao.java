@@ -16,6 +16,10 @@ public class DoadorDao {
         return Doador.listAll(); //retorna uma lista vazia [] se não houver responsáveis
     }
 
+    public Doador buscarDoador(Long id){
+        return Doador.findById(id);
+    }
+
     @Transactional
     public void cadastrar(Doador doador){
         doador.persistAndFlush();
