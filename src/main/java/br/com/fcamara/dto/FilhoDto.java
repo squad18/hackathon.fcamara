@@ -8,6 +8,10 @@ import javax.validation.constraints.NotNull;
 public class FilhoDto implements Serializable {
 	
 	private Long id;
+	
+	@NotNull(message="Id do resposavél é obrigatótrio!")
+	@NotBlank(message="Este campo não pode ser vázio!")
+	private Long idResponsavel;
 
 	@NotNull(message="Nome do aluno é obrigatótrio!")
 	@NotBlank(message="Este campo não pode ser vázio!")
@@ -69,6 +73,21 @@ public class FilhoDto implements Serializable {
 
 	public void setMaterial(String material) {
 		this.material = material;
+	}
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getIdResponsavel() {
+		return idResponsavel;
+	}
+
+	public void setIdResponsavel(Long idResponsavel) {
+		this.idResponsavel = idResponsavel;
 	}
 	
 	

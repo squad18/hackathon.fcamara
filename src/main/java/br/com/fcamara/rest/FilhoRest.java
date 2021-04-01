@@ -14,6 +14,8 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+
+import br.com.fcamara.dto.FilhoDto;
 import br.com.fcamara.model.Filho;
 import br.com.fcamara.service.FilhoService;
 
@@ -64,11 +66,11 @@ public class FilhoRest {
 	description = "filho",
 	content = {
 			@Content(mediaType =  "application/json",
-					schema = @Schema(implementation = Filho.class))
+					schema = @Schema(implementation = FilhoDto.class))
 			}
 	)
-	public Response cadastrar(Filho filho) {
-		service.cadastrar(filho);
+	public Response cadastrar(FilhoDto filhoDto) {
+		service.cadastrar(filhoDto);
 		return Response.status(Status.CREATED).build();
 		
 	}

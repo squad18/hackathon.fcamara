@@ -2,6 +2,7 @@ package br.com.fcamara.model.parser;
 
 import br.com.fcamara.dto.FilhoDto;
 import br.com.fcamara.model.Filho;
+import br.com.fcamara.model.Responsavel;
 
 public class FilhoParser {
 
@@ -17,6 +18,7 @@ public class FilhoParser {
 		dto.setEndereco_escola(entidade.getEndereco_escola());
 		dto.setRa_escolar(entidade.getRa_escolar());
 		dto.setMaterial(entidade.getMaterial());
+		dto.setIdResponsavel(entidade.getResponsavel().getId());
 
 		return dto;
 	}
@@ -28,6 +30,7 @@ public class FilhoParser {
 		entidade.setEscola(dto.getEscola());
 		entidade.setEndereco_escola(dto.getEndereco_escola());
 		entidade.setRa_escolar(dto.getRa_escolar());
+		entidade.setResponsavel(new Responsavel(dto.getIdResponsavel()));
 
 		return entidade;
 	}
