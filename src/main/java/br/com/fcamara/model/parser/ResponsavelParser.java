@@ -12,7 +12,7 @@ public class ResponsavelParser {
     public ResponsavelDto dto(Responsavel entidade){
     	ResponsavelDto dto = new ResponsavelDto();
     	
-    	dto.setCpf(entidade.getCpf());
+    	dto.setTelefone(entidade.getTelefone());
     	dto.setEmail(entidade.getEmail());
     	dto.setEndereco(entidade.getEndereco());
     	dto.setNome(entidade.getNome());
@@ -23,7 +23,7 @@ public class ResponsavelParser {
     public Responsavel entidade(ResponsavelDto dto){
     	Responsavel entidade = new Responsavel();
 
-    	entidade.setCpf(dto.getCpf());
+    	entidade.setTelefone(dto.getTelefone());
     	entidade.setEmail(dto.getEmail());
     	entidade.setEndereco(dto.getEndereco());
     	entidade.setNome(dto.getNome());

@@ -14,24 +14,42 @@ import io.quarkus.panache.common.Sort;
 
 @RequestScoped
 public class DoacaoDao { //é tipo o repository do spring
-	
+
 	public List<Doacao> listar() {
-        return Doacao.listAll(Sort.by("data"));
-    }
-		
-	public List<Doacao> buscarDoacaoPorIdFilho(Long id) { 
-		return Doacao.list("filho", Sort.by("data").descending(), new Filho(id));
-    }
+		return Doacao.listAll(Sort.by("dataStatus").descending()); //lis retorna [] uma lista vazia se não houver resultado da busca
+	}
 	
+	public Doacao buscarDoacao(Long id) {
+		return Doacao.findById(id);
+	}
+
+	public List<Doacao> buscarDoacaoPorIdFilho(Long id) { 
+		return Doacao.list("filho", Sort.by("dataStatus").descending(), new Filho(id));
+	}
+
 	public List<Doacao> buscarDoacaoPorIdDoador(Long id) { 
-		return Doacao.list("doador", Sort.by("data").descending(), new Doador(id));
-    }
-		
+		return Doacao.list("doador", Sort.by("dataStatus").descending(), new Doador(id));
+	}
+
 	@Transactional
 	public void cadastrar(Doacao doacao) {
 		doacao.persistAndFlush(); //persiste e cria uma id
-		//doacao.persit(); só persiste e não cria a id
+		//doacao.persist(); //só persiste e não cria a id
 	}
-	
+
+	@Transactional
+	public void atualizarStatusAceito(Doacao doacao) {
+		Long id = doacao.getId();
+		
+		Doacao.update("status = 'ACEITO' where id = ?1", id);
+		
+	}
+		
+	@Transactional
+	public void atualizarStatusRejeitado(Doacao doacao) {
+		Long id = doacao.getId();
+		
+		Doacao.update("status = 'REJEITADO' where id = ?1", id);
+	}
 }
 

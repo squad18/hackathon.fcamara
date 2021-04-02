@@ -14,6 +14,7 @@ public class DoacaoParser {
     public DoacaoDto dto(Doacao entidade){
     	DoacaoDto dto = new DoacaoDto();
     	
+    	dto.setId(entidade.getId());
     	dto.setAgendamento(entidade.getAgendamento());
     	dto.setDataStatus(entidade.getDataStatus());
     	dto.setIdDoador(entidade.getDoador().getId());
@@ -26,6 +27,7 @@ public class DoacaoParser {
     public Doacao entidade(DoacaoDto dto){
     	Doacao entidade = new Doacao();
 
+    	entidade.setId(dto.getId());
     	entidade.setAgendamento(dto.getAgendamento());
     	entidade.setDataStatus(dto.getDataStatus());
     	entidade.setDoador(new Doador(dto.getIdDoador()));

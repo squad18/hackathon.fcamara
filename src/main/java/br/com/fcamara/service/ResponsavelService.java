@@ -34,7 +34,7 @@ public class ResponsavelService {
 	}
 
 	public void validar(ResponsavelDto responsavelDto) throws ApiException {
-		if ( String.valueOf(responsavelDto.getCpf()).length() == 0 || 
+		if ( responsavelDto.getTelefone().length() == 0 ||
 				responsavelDto.getEmail().length() == 0 ||
 				responsavelDto.getEndereco().length() == 0 ||
 				responsavelDto.getNome().length() == 0 
@@ -51,10 +51,10 @@ public class ResponsavelService {
 		dao.cadastrar(responsavel);
 	}
 
-	@Transactional(rollbackOn = Exception.class) 
-	public void atualizar(Responsavel responsavel) {
-
-		dao.atualizar(responsavel);
-	}
+//	@Transactional(rollbackOn = Exception.class) 
+//	public void atualizar(Responsavel responsavel) {
+//
+//		dao.atualizar(responsavel);
+//	}
 
 }
