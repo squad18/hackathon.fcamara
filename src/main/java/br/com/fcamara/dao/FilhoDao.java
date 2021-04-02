@@ -22,7 +22,11 @@ public class FilhoDao {
 	}
 
 	@Transactional
-	public void atualizar(Filho filho) {
+	public void atualizarMaterial(Filho filho) {
+		Long id = filho.getId();
+
+		Filho.update("material = '' where id = ?1", id);
 
 	}
+
 }

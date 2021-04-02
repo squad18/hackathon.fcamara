@@ -22,8 +22,8 @@ public class Doador extends PanacheEntity {
 	@Column(name="nome")
 	private String nome;
 
-	@Column(name="cpf")
-	private Long cpf;
+	@Column(name="telefone")
+	private String telefone;
 
 	@Column(name="endereco")
 	private String endereco;
@@ -64,11 +64,11 @@ public class Doador extends PanacheEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getCpf() {
-		return cpf;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getEndereco() {
 		return endereco;

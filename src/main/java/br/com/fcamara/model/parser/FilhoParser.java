@@ -13,12 +13,15 @@ public class FilhoParser {
 	public FilhoDto dto(Filho entidade) {
 		FilhoDto dto = new FilhoDto();
 
-		dto.setNome(entidade.getNome());
+		dto.setCidade(entidade.getCidade());
 		dto.setEscola(entidade.getEscola());
-		dto.setEndereco_escola(entidade.getEndereco_escola());
-		dto.setRa_escolar(entidade.getRa_escolar());
+		dto.setEstado(entidade.getEstado());
+		dto.setId(entidade.getId());
+		dto.setIdResponsavel(entidade.getId());
+		dto.setLogradouro(entidade.getLogradouro());
 		dto.setMaterial(entidade.getMaterial());
-		dto.setIdResponsavel(entidade.getResponsavel().getId());
+		dto.setNome(entidade.getNome());
+		dto.setRaEscolar(entidade.getRaEscolar());
 
 		return dto;
 	}
@@ -26,11 +29,15 @@ public class FilhoParser {
 	public Filho entidade(FilhoDto dto) {
 		Filho entidade = new Filho();
 
-		entidade.setNome(dto.getNome());
+		entidade.setCidade(dto.getCidade());
 		entidade.setEscola(dto.getEscola());
-		entidade.setEndereco_escola(dto.getEndereco_escola());
-		entidade.setRa_escolar(dto.getRa_escolar());
+		entidade.setEstado(dto.getEstado());
+		entidade.setId(dto.getId());
 		entidade.setResponsavel(new Responsavel(dto.getIdResponsavel()));
+		entidade.setLogradouro(dto.getLogradouro());
+		entidade.setMaterial(dto.getMaterial());
+		entidade.setNome(dto.getNome());
+		entidade.setRaEscolar(dto.getRaEscolar());
 
 		return entidade;
 	}

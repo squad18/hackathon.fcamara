@@ -22,23 +22,29 @@ public class Filho extends PanacheEntity { // não tem @ID porque o PanacheEntit
 	@Column(name = "escola", nullable = false)
 	private String escola;
 
-	@Column(name = "endereco_escola", nullable = false)
-	private String endereco_escola;
+	@Column(name = "logradouro", nullable = false)
+	private String logradouro;
 
-	@Column(name = "ra_escolar", nullable = false)
-	private String ra_escolar;
+	@Column(name = "cidade", nullable = false)
+	private String cidade;
 
-	@Column(name = "material", nullable = false)
+	@Column(name = "estado", nullable = false)
+	private String estado;
+
+	@Column(name = "raEscolar", nullable = false)
+	private String raEscolar;
+
+	@Column(name = "material")
 	private String material;
 
 	@ManyToOne(optional = false) // optional=false, ou seja é obrigatório! Não há filho sem responsável.
-	@JoinColumn(name = "responsavel_id", updatable = false)
+	// @JoinColumn(name="responsavel_id", updatable=false)
 	private Responsavel responsavel;
 
 	@OneToMany(mappedBy = "filho", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Doacao> doacoes;
 
-//CONSTRUCTORS
+	// CONSTRUCTORS
 	public Filho() {
 		super();
 	}
@@ -48,7 +54,7 @@ public class Filho extends PanacheEntity { // não tem @ID porque o PanacheEntit
 		this.id = id;
 	}
 
-//GETTERS AND SETTERS
+	// GETTERS AND SETTERS
 	public Long getId() {
 		return id;
 	}
@@ -73,20 +79,36 @@ public class Filho extends PanacheEntity { // não tem @ID porque o PanacheEntit
 		this.escola = escola;
 	}
 
-	public String getEndereco_escola() {
-		return endereco_escola;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setEndereco_escola(String endereco_escola) {
-		this.endereco_escola = endereco_escola;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
-	public String getRa_escolar() {
-		return ra_escolar;
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setRa_escolar(String ra_escolar) {
-		this.ra_escolar = ra_escolar;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getRaEscolar() {
+		return raEscolar;
+	}
+
+	public void setRaEscolar(String raEscolar) {
+		this.raEscolar = raEscolar;
 	}
 
 	public String getMaterial() {
