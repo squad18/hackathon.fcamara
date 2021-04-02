@@ -69,9 +69,13 @@ public class DoadorRest {
             @Content(mediaType = "application/json", schema = @Schema(implementation = DoadorDto.class))
         }
     )
-    public Response cadastrar(DoadorDto dto) throws ApiException{
-        service.cadastrar(dto);
-        return Response.status(Response.Status.OK).build();
+    public Response cadastrar(DoadorDto dto){
+        try {
+            service.cadastrar(dto);
+            return Response.status(Response.Status.OK).build();
+		} catch (ApiException e) {
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+		}	
     }
 
 }

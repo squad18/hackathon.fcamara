@@ -3,9 +3,11 @@ package br.com.fcamara.rest;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,7 +22,7 @@ import br.com.fcamara.dto.DoacaoDto;
 import br.com.fcamara.exception.ApiException;
 import br.com.fcamara.model.Filho;
 import br.com.fcamara.service.DoacaoService;
-//import br.com.fcamara.service.FilhoService;
+import br.com.fcamara.service.FilhoService;
 
 
 @Path("doacao")
@@ -28,7 +30,7 @@ import br.com.fcamara.service.DoacaoService;
 @Produces(MediaType.APPLICATION_JSON)
 public class DoacaoRest {
 
-	/*@Inject 
+	@Inject 
 	DoacaoService service;
 	
 	@Inject 
@@ -139,6 +141,6 @@ public class DoacaoRest {
 		} catch (ApiException e) {
 			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
 		}
-	}*/
+	}
 	
 }

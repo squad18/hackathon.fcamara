@@ -22,7 +22,7 @@ public class DoacaoService { //SERVICE É ONDE FICAM AS VALIDAÇÕES!!!
 	@Inject
 	DoacaoDao dao; // a dao é tipo um repository
 
-	/*@Inject
+	@Inject
 	FilhoService filhoService;
 
 	public List<DoacaoDto> listar() {
@@ -45,6 +45,16 @@ public class DoacaoService { //SERVICE É ONDE FICAM AS VALIDAÇÕES!!!
 		if ( filho.getMaterial().length() == 0 ) {
 			throw new ApiException("Aluno atualmente não precisa de doações!");
 		}
+	}
+
+	@Transactional(rollbackOn = Exception.class) 
+	public void cadastrar(DoacaoDto doacaoDto) throws ApiException {
+		doacaoDto.setStatus("SOLICITADO"); //sempre que se cadastra uma doacao, o status será SOLICITADO
+		validar(doacaoDto);
+
+		Doacao doacao = DoacaoParser.get().entidade(doacaoDto);
+
+		dao.cadastrar(doacao);
 	}
 	
 	@Transactional(rollbackOn = Exception.class) 
@@ -70,6 +80,6 @@ public class DoacaoService { //SERVICE É ONDE FICAM AS VALIDAÇÕES!!!
 		
 		dao.atualizarStatusRejeitado(doacao);
 		
-	}*/
+	}
 
 }
