@@ -33,7 +33,7 @@ public class ResponsavelRest {
 	@Operation(summary = "Listar responsáveis.",
 	description = "Listar todos os responsáveis.")
 	@APIResponse(responseCode = "200",
-	description = "responsável",
+	description = "responsavel",
 	content = {
 			@Content(mediaType =  "application/json",
 					schema = @Schema(implementation = ResponsavelDto.class))
@@ -49,7 +49,7 @@ public class ResponsavelRest {
 	@Operation(summary = "Buscar responsável.",
 	description = "Buscar responsável pelo id.")
 	@APIResponse(responseCode = "200",
-	description = "responsável",
+	description = "responsavel",
 	content = {
 			@Content(mediaType =  "application/json",
 					schema = @Schema(implementation = ResponsavelDto.class))
@@ -63,9 +63,9 @@ public class ResponsavelRest {
 	@POST
 	@Path("")
 	@Operation(summary = "Cadastrar responsável.",
-	description = "Cadastrar responsável: cpf, email, endereço e nome.")
+	description = "Cadastrar responsável: email, endereço, nome e telefone.")
 	@APIResponse(responseCode = "201",
-	description = "responsável",
+	description = "responsavel",
 	content = {
 			@Content(mediaType =  "application/json",
 					schema = @Schema(implementation = ResponsavelDto.class))

@@ -6,26 +6,24 @@ import java.io.Serializable;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-
+// Por enquanto ResponsavelDto é igual a Responsavel
 
 public class ResponsavelDto implements Serializable {
 	
 	private Long id;
 	
-	@NotNull(message="CPF é obrigatótrio!")
-	@NotBlank(message="Nao permitido CPF vazio!")
-	private Long cpf;
+	@NotNull(message="Telefone e obrigatotrio!")
+	@NotBlank(message="Nao permitido Telefone vazio!")
+	private String telefone;
 	
-	@NotNull(message="Nome é obrigatótrio!")
+	@NotNull(message="Nome e obrigatorio!")
 	@NotBlank(message="Nao permitido nome vazio!")
 	private String nome;
 
-	@NotNull(message="Endereço é obrigatótrio!")
+	@NotNull(message="Endereço e obrigatorio!")
 	@NotBlank(message="Nao permitido endereço vazio!")
 	private String endereco;
 
-	@NotNull(message="Email é obrigatótrio!")
-	@NotBlank(message="Nao permitido email vazio!")
 	private String email;
 
 	
@@ -36,11 +34,11 @@ public class ResponsavelDto implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getCpf() {
-		return cpf;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getNome() {
 		return nome;

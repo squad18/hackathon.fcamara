@@ -1,12 +1,8 @@
 package br.com.fcamara.model;
 
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -16,8 +12,8 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name="responsavel")
 public class Responsavel extends PanacheEntity {
 	
-	@Column(name="cpf", nullable=false)
-	private Long cpf;
+	@Column(name="telefone", nullable=false)
+	private String telefone;
 	
 	@Column(name="nome", nullable=false)
 	private String nome;
@@ -25,11 +21,11 @@ public class Responsavel extends PanacheEntity {
 	@Column(name="endereco", nullable=false)
 	private String endereco;
 
-	@Column(name="email", nullable=false)
+	@Column(name="email")
 	private String email;
 	
-	@OneToMany(mappedBy="responsavel", cascade=CascadeType.ALL, orphanRemoval=true)
-	private List<Filho> filhos;
+//	@OneToMany(mappedBy="responsavel", cascade=CascadeType.ALL, orphanRemoval=true)
+//	private List<Filho> filhos;
 		
 	
 	//CONSTRUCTORS
@@ -49,11 +45,11 @@ public class Responsavel extends PanacheEntity {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getCpf() {
-		return cpf;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getNome() {
 		return nome;
@@ -73,11 +69,11 @@ public class Responsavel extends PanacheEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<Filho> getFilhos() {
-		return filhos;
-	}
-	public void setFilhos(List<Filho> filhos) {
-		this.filhos = filhos;
-	}	
+//	public List<Filho> getFilhos() {
+//		return filhos;
+//	}
+//	public void setFilhos(List<Filho> filhos) {
+//		this.filhos = filhos;
+//	}	
 	
 }

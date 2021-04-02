@@ -16,7 +16,7 @@ public class ResponsavelDao {
         return Responsavel.listAll(); //retorna uma lista vazia [] se não houver responsáveis
     }
     
-    public Responsavel buscarResponsavel(Long id) {
+    public Responsavel buscarResponsavel(Long id) { //retorna null se não houver responsável com esse id
     	return Responsavel.findById(id);
     }
       
@@ -25,11 +25,11 @@ public class ResponsavelDao {
     	responsavel.persistAndFlush();
 	}
     
-    @Transactional
-	public void atualizar(Responsavel responsavel) {
-    	
-    	
-	}
+//    @Transactional
+//	public void atualizar(Responsavel responsavel) {
+//    	
+//    	
+//	}
     
     
 }
