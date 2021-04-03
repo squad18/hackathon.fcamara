@@ -21,6 +21,10 @@ Como IDE, estamos usando o Eclipse:
 
 https://www.eclipse.org/downloads/
 
+Abaixo está o link do MySQL:
+
+https://dev.mysql.com/downloads/workbench/
+
 
 Instalado todos esses componentes, segue abaixo como baixar o programa e executá-lo:
 
@@ -32,13 +36,6 @@ Instalado todos esses componentes, segue abaixo como baixar o programa e execut�
 ```shell script
 git clone https://github.com/squad18/hackathon.fcamara.git
 ```
-
-Para acessar a branch master, execute o seguinte código no terminal:
-
-```shell script
-git checkout master
-```
-
 
 
 *****
