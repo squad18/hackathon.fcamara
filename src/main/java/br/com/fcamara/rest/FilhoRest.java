@@ -38,7 +38,7 @@ public class FilhoRest {
 		}
 	)
 	public Response listar() {
-		return Response.status(Status.OK).entity(service.listar()).build();
+		return Response.status(Status.OK).entity(service.listar()).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 
@@ -54,7 +54,7 @@ public class FilhoRest {
 		}
 	)
 	public Response buscarFilho(@PathParam("id") Long id) {
-		return Response.status(Status.OK).entity(service.buscarFilho(id)).build();
+		return Response.status(Status.OK).entity(service.buscarFilho(id)).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
 	
@@ -71,7 +71,7 @@ public class FilhoRest {
 	)
 	public Response cadastrar(FilhoDto filhoDto) {
 		service.cadastrar(filhoDto);
-		return Response.status(Status.CREATED).build();
+		return Response.status(Status.CREATED).header("Access-Control-Allow-Origin", "*").build();
 		
 	}
 

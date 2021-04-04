@@ -50,7 +50,8 @@ public class DoacaoRest {
     public Response listar() {
         return Response
                 .status(Response.Status.OK)
-                .entity(service.listar())
+				.entity(service.listar())
+				.header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 
@@ -90,9 +91,10 @@ public class DoacaoRest {
 			service.cadastrar(doacaoDto);
 			return Response
 					.status(Response.Status.CREATED)
+					.header("Access-Control-Allow-Origin", "*")
 					.build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}	
 	}
 	
@@ -114,9 +116,10 @@ public class DoacaoRest {
 			filhoService.atualizarMaterial(filho.getId());
 			return Response
 					.status(Response.Status.OK)
+					.header("Access-Control-Allow-Origin", "*")
 					.build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}
 	}
 	
@@ -137,9 +140,10 @@ public class DoacaoRest {
 			service.atualizarStatusRejeitado(idDoacao);
 			return Response
 					.status(Response.Status.OK)
+					.header("Access-Control-Allow-Origin", "*")
 					.build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}
 	}
 	

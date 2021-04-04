@@ -40,7 +40,7 @@ public class DoadorRest {
         }
     )
     public Response listar(){
-        return Response.status(Status.OK).entity(service.listar()).build();
+        return Response.status(Status.OK).entity(service.listar()).header("Access-Control-Allow-Origin", "*").build();
     }   
 
     @GET
@@ -55,7 +55,7 @@ public class DoadorRest {
 		}
 	)
 	public Response buscarDoador(@PathParam("id") Long id) {
-		return Response.status(Status.OK).entity(service.buscarDoador(id)).build();
+		return Response.status(Status.OK).entity(service.buscarDoador(id)).header("Access-Control-Allow-Origin", "*").build();
 	}
     
     @POST
@@ -72,9 +72,9 @@ public class DoadorRest {
     public Response cadastrar(DoadorDto dto){
         try {
             service.cadastrar(dto);
-            return Response.status(Response.Status.OK).build();
+            return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin", "*").build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}	
     }
 

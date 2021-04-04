@@ -31,8 +31,8 @@ public class Doador extends PanacheEntity {
 	@Column(name="email")
 	private String email;
 	
-	@OneToMany(mappedBy="doador", cascade=CascadeType.ALL, orphanRemoval=true)
-	private List<Doacao> doacoes;
+	//@OneToMany(mappedBy="doador", cascade=CascadeType.ALL, orphanRemoval=true)
+	//private List<Doacao> doacoes;
 		  
 	
 	//CONSTRUCTORS
@@ -82,11 +82,11 @@ public class Doador extends PanacheEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<Doacao> getDoacoes() {
+	/*public List<Doacao> getDoacoes() {
 		return doacoes;
 	}
 	public void setDoacoes(List<Doacao> doacoes) {
 		this.doacoes = doacoes;
-	}
+	}*/
 	
 }

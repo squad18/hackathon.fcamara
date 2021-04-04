@@ -40,7 +40,7 @@ public class ResponsavelRest {
 		}
 	)
 	public Response listar() {
-		return Response.status(Status.OK).entity(service.listar()).build();
+		return Response.status(Status.OK).entity(service.listar()).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 
@@ -56,7 +56,7 @@ public class ResponsavelRest {
 		}
 	)
 	public Response buscarResponsavel(@PathParam("id") Long id) {
-		return Response.status(Status.OK).entity(service.buscarResponsavel(id)).build();
+		return Response.status(Status.OK).entity(service.buscarResponsavel(id)).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
 	
@@ -76,7 +76,7 @@ public class ResponsavelRest {
 			service.cadastrar(responsavelDto);
 			return Response.status(Status.CREATED).build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}
 		
 	}
