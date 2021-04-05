@@ -74,7 +74,7 @@ public class ResponsavelRest {
 	public Response cadastrar(ResponsavelDto responsavelDto) {
 		try {
 			service.cadastrar(responsavelDto);
-			return Response.status(Status.CREATED).build();
+			return Response.status(Status.CREATED).header("Access-Control-Allow-Origin", "*").build();
 		} catch (ApiException e) {
 			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
 		}
