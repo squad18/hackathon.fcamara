@@ -17,15 +17,27 @@ https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html
 
 https://maven.apache.org/download.cgi
 
+
+*****
 Como IDE, estamos usando o Eclipse:
 
 https://www.eclipse.org/downloads/
 
+*****
 Abaixo está o link do MySQL:
 
 https://dev.mysql.com/downloads/workbench/
 
 
+Depois de baixar o MySQL é necessário abrir o MySQL Workbench e executar os seguintes códigos:
+
+```shell script
+create database doacaodb;
+use doacaodb;
+```
+
+Depois você clona e abre o repositório do back-end
+Com o VS Code aberto, vai até a pasta application.properties e muda o password
 Instalado todos esses componentes, segue abaixo como baixar o programa e executá-lo:
 
 
