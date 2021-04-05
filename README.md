@@ -37,6 +37,7 @@ use doacaodb;
 ```
 
 Depois você clona e abre o repositório do back-end
+
 Com o VS Code aberto, vai até a pasta application.properties e muda o password
 Instalado todos esses componentes, segue abaixo como baixar o programa e executá-lo:
 
