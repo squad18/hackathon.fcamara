@@ -74,7 +74,7 @@ public class DoadorRest {
             service.cadastrar(dto);
             return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin", "*").build();
 		} catch (ApiException e) {
-			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).header("Access-Control-Allow-Origin", "*").build();
+			return Response.status(Status.METHOD_NOT_ALLOWED).entity(e).build();
 		}	
     }
 
