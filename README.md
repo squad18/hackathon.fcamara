@@ -83,5 +83,3 @@ Lucas - @Lucas Cabral / lucas.kabral2112@gmail.com
 
 Monica - @Monica Ribeiro / monicaspribeiro@gmail.com
 
-Riane - @Riane / Rianemlo@gmail.com
-
